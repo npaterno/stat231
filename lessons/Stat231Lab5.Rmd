@@ -16,16 +16,14 @@ library(infer)
 
 As we've seen in chapter 6, we can calculate confidence intervals and conduct hypothesis test to make claims about proportions in our population but based on our sample. As you will see in chapter 7, we can also do this for averages. In this lab, we'll build an interval and conduct a hypothesis test for a single sample proportion and as well as a two-sample average (section 7.3). 
 
-We'll be using the *piracy* data set included in the *Data* sub-folder of our *Stat231Labs* folder. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation. 
+We'll be using the *piracy* data set from the *openintro* package. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation. 
 
 ## Proportions
 
 For the proportion section, we'll conduct a hypothesis test to determine if a majority of a randomly chosen congress are Democrats. First, we'll need to make a new data set that contains the proportion of Democrats and Other parties. 
 
 ```{r}
-piracy <- read_csv("Data/piracy.csv")
-
-prop_data <- piracy
+prop_data <- Stat231::piracy
 
 prop_data$party <- recode(prop_data$party, "D" = 1, .default = 0)
 prop_data$party <- as.double(prop_data$party)
@@ -73,12 +71,12 @@ For our means section Our test/interval will be to determine if there is a diffe
 To clean our data, we'll need to replace missing values with 0 (rationale discussed in lab/the screencast), create a new variable for the sum of money received and filter our the few Independent party observations. 
 
 ```{r}
-summary_data <- piracy %>% 
+summary_data <- Stat231::piracy %>% 
   mutate(money_pro = replace_na(money_pro, 0), 
          money_con = replace_na(money_con,0),
          money_total = money_pro+money_con) %>% 
   select(-c(money_pro, money_con)) %>%  
-  filter(party!= "I")
+  filter(party != "I")
 ```
 
 Now we're ready to run our test.

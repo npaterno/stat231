@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^images$
+readme.txt
+^assignments$
+^lessons$

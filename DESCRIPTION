@@ -10,7 +10,8 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: 
-    R (>= 3.2),
+    R (>= 3.2)
+Imports:
     tidyverse,
     openintro,
     infer,
@@ -19,6 +20,5 @@ Depends:
     ggthemes,
     ggdark,
     lubridate
-Imports:
     
-
+    

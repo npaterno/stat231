@@ -1,21 +1,15 @@
-#' {ggplot} theme.
-#'
+#' @title PLU Theme
+#' @description Theme for ggplot2 based on PLU colors
 #' A ggplot theme based on PLU colors.
 #'
-#'
-#' @return Nothing is returned from the function.
-#' @author Nick Paterno
-#' @export
-#' @examples
-#'
-#' ggplot(piracy, (money_pro, money_con))+
-#'  geom_point()+
-#'  theme_lutes()
-#'
-theme_lutes <- function(){
-  theme(
+#' @inheritParams ggplot2::theme_bw
+
+
+theme_lutes <- function(base_size = 16, base_family = ""){
+  return(theme_bw()+
+    theme(
     panel.background = element_rect(color = "#000"),
-    panel.grid.major.y =  = element_line(color = "#ffcc00",
+    panel.grid.major.y = element_line(color = "#ffcc00",
                                     size = 1.25),
     panel.grid.minor.y = element_line(color = "#cc9933"),
     panel.grid.major.x = element_blank(),
@@ -39,5 +33,5 @@ theme_lutes <- function(){
     axis.title = element_text(color = "#fff",
                               family = "mono",
                               size = 14)
-  )
+  ))
 }

@@ -3,7 +3,6 @@ title: "My First R Markdown Assignment"
 author: " "
 date: " "
 output: html_document
-          template: flatly
 ---
 
 ```{r setup, include=FALSE}

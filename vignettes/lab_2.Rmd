@@ -1,6 +1,9 @@
 ---
 title: "Stat231:Lab2"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
 description: >
   For this lab, we will be looking at calculating summary statistics, such as a five number summary, as well as boxplots.
 vignette: >

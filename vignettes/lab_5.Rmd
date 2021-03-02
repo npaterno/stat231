@@ -1,6 +1,9 @@
 ---
 title: "Stat231:Lab5"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
 description: >
   Making Claims about a Population Based on Sample Data.
 vignette: >

@@ -2,7 +2,10 @@
 title: "Stat231:Lab1"
 description: >
   The goal of this lab is to compile your first R   Markdown document and get a sneak peak of what we'll be doing in lab the next two weeks.
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
 vignette: >
   %\VignetteIndexEntry{Stat231:Lab1}
   %\VignetteEngine{knitr::rmarkdown}

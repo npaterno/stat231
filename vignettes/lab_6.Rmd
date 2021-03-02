@@ -1,6 +1,9 @@
 ---
 title: "Stat231:Lab6"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
 description: >
   For this lab, we will be peaking at section 7.5 (without worry about all the formulas). The analysis of variance - anova - test is equivalent to the chi-squared test but for numeric data instead of categorical data; It will compare the means of three or more samples. 
 vignette: >

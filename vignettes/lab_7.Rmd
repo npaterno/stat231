@@ -1,6 +1,9 @@
 ---
 title: "Stat231:Lab7"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
 description: >
   Building a basic linear regression model.
 vignette: >

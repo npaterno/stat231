@@ -19,7 +19,8 @@ Imports:
     palmerpenguins,
     ggthemes,
     ggdark,
-    lubridate
+    lubridate,
+    ggplot2
 Suggests: 
     knitr,
     rmarkdown

@@ -9,8 +9,6 @@ Each lesson is available as a vignette; We'll go over how to get to them during 
 
 Each assignment is available as an rmarkdown template. Once complete, you should knit your document and submit the resulting html (or pdf) file via email. 
 
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 

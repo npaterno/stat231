@@ -17,6 +17,8 @@ Conduct a hypothesis test to determine if a majority of a randomly chosen congre
 #INSERT YOUR CODE HERE
 ```
 
+### Conclusion to hypothesis test:
+
 ## Problem Two:
 
 Determine if there is a difference in money received from pro lobby groups and con lobby groups (test and interval). You'll need to clean the data by replacing missing values with 0 and filtering to a single political party of your choice.
@@ -24,4 +26,6 @@ Determine if there is a difference in money received from pro lobby groups and c
 ```{r}
 #INSERT YOUR CODE HERE
 ```
+
+### Conclusion to hypothesis test:
 

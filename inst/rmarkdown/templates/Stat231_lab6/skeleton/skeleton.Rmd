@@ -11,9 +11,16 @@ library(tidyverse)
 library(openintro)
 ```
 
-## Problem One: 
-Use the classic and p-value method to determine if there is a difference in the average price of diamonds based on the carat of the diamond. 
+### Problem One: 
+Use the classic and p-value method to determine if there is a difference in the average price of diamonds based on the color of the diamond. 
 
 ```{r}
-#INSERT YOUR CODE HERE
+# CODE BLOCK FOR YOUR ANOVA TEST
 ```
+
+```{r}
+# CODE BLOCK FOR CALCULATING CRITICAL F
+```
+#### Conclusion for p-value method:
+
+#### Conclusion for classic method:

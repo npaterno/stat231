@@ -12,23 +12,28 @@ library(tidyverse)
 library(openintro)
 ```
 
-## Problem One: 
+## Base R vs Tidyverse
+One of the major differences between base R and Tidyverse is the use of the pipe operator, ` %>% `, from the `magrittr` package. Starting with R version 4.0, there is a native (i.e. base R) pipe operator, `|>`. However, it behaves differently from the `magrittr` pipe. For the problems below, use the `magrittr` pipe for the Tidyverse problems and either the native pipe or no pipe for base R. 
 
-Calculate the average number of study hours per week with and without the pipe-operator.
+### Problem One: 
 
-```{r}
-#INSERT YOUR CODE HERE
-```
-
-## Challenge: 
-
-Calculate the standard deviation for both variables with and without the pipe operator.
+Calculate the average number of study hours per week with base R and Tidyverse.
 
 ```{r}
 #INSERT YOUR CODE HERE
 ```
 
-## Problem Two: 
+### Challenge: 
+
+Calculate the standard deviation for both variables with base R and Tidyverse.
+
+```{r}
+#INSERT YOUR CODE HERE
+```
+
+For the plots below, use the `ggplot2` package from the Tidyverse.
+
+### Problem Two: 
 
 Sketch a histogram for the study\_hours variable.
 
@@ -36,7 +41,7 @@ Sketch a histogram for the study\_hours variable.
 #INSERT YOUR CODE HERE
 ```
 
-## Challenge: 
+### Challenge: 
 
 Sketch a boxplot for each variable.
 

@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, include = FALSE}
 library(Stat231)
 library(tidyverse)
 library(moderndive)
@@ -28,12 +28,12 @@ library(openintro)
 
 ## Building a Linear Model
 
-For this lab we will be trying to predict the difference between the starting price and final price (not including shipping) for a Mario Kart game auctioned on ebay. Let's take a look at our dataset. 
+For this lab we will be trying to predict the difference between the starting price and final price (not including shipping) for a Mario Kart game auctioned on ebay. Let's take a look at our data set. 
 ```{r}
 glimpse(mariokart)
 ```
 
-We want to predict the difference of the start and final price of the game itself. Looking at the pricing variables given we have *start_Pr* (starting price), *ship_Pr* (shipping price) and *total_Pr* (total price). This means we need to do a bit of work to get the variable we want. Below I'll clean the data - to get rid of unnecessary variables - and add the new variable. 
+We want to predict the difference of the start and final price of the game itself. Looking at the pricing variables given we have start_Pr (starting price), ship_Pr (shipping price) and total_Pr (total price). This means we need to do a bit of work to get the variable we want. Below I'll clean the data - to get rid of unnecessary variables - and add the new variable. 
 
 ```{r}
 model_data <- mariokart %>% 
@@ -43,7 +43,7 @@ model_data <- mariokart %>%
 
 ## Finding the Correlation Coefficient
 
-Next, we'll use a function from the *moderndive* package to calculate a few linear correlation coefficients and see if there are any relationships worth modeling. 
+Next, we'll use a function from the `moderndive` package to calculate a few linear correlation coefficients and see if there are any relationships worth modeling. 
 
 ```{r}
 get_correlation(data = model_data, price_diff ~ duration)
@@ -99,26 +99,20 @@ The *nBids* row is for the slope of the line. Based on our data, the model shows
 
 ## Making Predictions
 
-Now that our model is built, let's make some predictions. To do this, we'll need to write a function that takes in a model and value and returns a prediction. 
-
-```{r}
-model_prediction <- function(model, value){ #This line defines our function.
-  return(model$coefficients[1]+value*model$coefficients[2]) #This line calculates the prediction by evaluating the linear function at the supplied value and returns the result. 
-}
-```
+Now that our model is built, let's make some predictions. To do this, we'll use the `linear_model_prediction` function from our `Stat231` package.
 
 We'll make two predictions: an interpolation (within the original data cluster) and an extrapolation (a point away from the original data cluster). 
 
 Interpolation: 
 ```{r}
-model_prediction(price_model, 15)
+linear_model_prediction(price_model, 15)
 ```
 
 Based on our model, an ebay auction for Mario Kart that receive 15 bids will have a $38.76 increase from the starting price to the final price. 
 
 Extrapolation: 
 ```{r}
-model_prediction(price_model, 100)
+linear_model_prediction(price_model, 100)
 ```
 
 Based on our model, an ebay auction for Mario Kart that receive 100 bids will have a $186.40 increase from the starting price to the final price. 

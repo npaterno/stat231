@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, include = FALSE}
 library(Stat231)
 library(tidyverse)
 library(openintro)
@@ -29,7 +29,7 @@ library(openintro)
 
 For this lab, we will be peaking at section 7.5 (without worry about all the formulas). The analysis of variance - anova - test is equivalent to the chi-squared test but for numeric data instead of categorical data; It will compare the means of three or more samples. 
 
-We will be going back to the diamonds data set and running an anova test to see if there is a difference in the average price of diamonds based on clarity. We will nest the test inside a *summary()* function to get the test and print out of results in one line. 
+We will be going back to the diamonds data set and running an anova test to see if there is a difference in the average price of diamonds based on clarity. We will nest the test inside a `summary()` function to get the test and print out of results in one line. 
 
 
 ```{r}

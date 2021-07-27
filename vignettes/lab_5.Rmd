@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, include = FALSE}
 library(Stat231)
 library(tidyverse)
 library(infer)
@@ -31,7 +31,7 @@ library(infer)
 
 As we've seen in chapter 6, we can calculate confidence intervals and conduct hypothesis test to make claims about proportions in our population but based on our sample. As you will see in chapter 7, we can also do this for averages. In this lab, we'll build an interval and conduct a hypothesis test for a single sample proportion and as well as a two-sample average (section 7.3). 
 
-We'll be using the *piracy* data set included in the *Data* sub-folder of our *Stat231Labs* folder. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation. 
+We'll be using the `piracy` data set included in  our `Stat231` package. It contains data for each member of congress and money they received from lobby groups for (money_pro) and against (money_con) anti-piracy legislation. 
 
 ## Proportions
 
@@ -51,7 +51,7 @@ dem_count <- prop_data %>%
             other_prop = other/total)
 ```
 
-There is a function, *prop.test()*, that calculates the test and interval for us. However, it is not a true 1 proportion z test. Instead it runs a chi-squared test assuming that the distribution is binomial. We'll use some other functions to calculate these manually. 
+There is a function, `prop.test()`, that calculates the test and interval for us. However, it is not a true 1 proportion z test. Instead it runs a chi-squared test assuming that the distribution is binomial. We'll use the `categorical_z` function from our `Stat231` package. The function has arguments of sample proportion, (assumed) population proportion and sample size.
 
 $H_0: p = 0.50$
 
@@ -60,22 +60,23 @@ $H_1: p > 0.50$
 $\alpha = 0.05 \rightarrow Z* = 1.645$
 
 ```{r}
-z <- (dem_count$democrats_prop-0.50)/sqrt(0.50*(1-0.50)/dem_count$total) #calculating the test statistic
-z #print the test statistics
+z <- categorical_z(dem_count$democrats_prop, 0.50, dem_count$total) #calculate z score
+z # print z score
 
-pval <- pnorm(z, lower.tail = FALSE) #calculating the p-value
-pval #printing the p-value
+pval <- pnorm(z, lower.tail = FALSE) #calculate the p-value
+pval #print the p-value
 ```
 
 Using the classic method, our test statistic is not in the critical region so we fail to reject $H_0$. There is not enough evidence to support the claim that the majority of a randomly chosen congress is Democrat. 
 
 Using the p-value method, our p-value is much greater than alpha so we fail to reject $H_0$. There is not enough evidence to support the claim that the majority of a randomly chosen congress is Democrat. 
 
-If there is not a majority, what proportion of Democrats can we expect? This is where our confidence interval comes in. We'll still use $\alpha = 0.05$; however, $Z*$ will change since we are now using two-tails. In particular, $Z* = 1.96$. 
+If there is not a majority, what proportion of Democrats can we expect? This is where our confidence interval comes in. We'll still use $\alpha = 0.05$; however, $Z*$ will change since we are now using two-tails. The function will change $Z*$ for us behind the scenes.
 
 ```{r}
-dem_count$democrats_prop + c(-1,1)*1.96*sqrt(dem_count$democrats_prop*(1-dem_count$democrats_prop)/dem_count$total)
+prop_ci(dem_count$democrats_prop, 0.05, dem_count$total)
 ```
+
 
 We can expect a randomly chosen congress to be between 41.28% Democrat and 49.73 % Other.
 

@@ -20,6 +20,7 @@ Imports:
     ggthemes,
     ggdark,
     lubridate,
+    stats,
     ggplot2
 Suggests: 
     knitr,

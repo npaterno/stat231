@@ -4,6 +4,8 @@
 #' @param alpha A significance level
 #' @param n Sample size
 #' 
+#' @import stats
+#' 
 #' @export
 
 prop_ci <- function(p_hat, alpha, n){

@@ -9,7 +9,7 @@ library(tidyverse)
 library(infer)
 ```
 
-## Problem One:
+### Problem One:
 
 Conduct a hypothesis test to determine if a majority of a randomly chosen congress is Republican. Calculate the confidence interval as well. You'll need to *recode* your data similar to the example in the lesson.
 
@@ -17,9 +17,9 @@ Conduct a hypothesis test to determine if a majority of a randomly chosen congre
 #INSERT YOUR CODE HERE
 ```
 
-### Conclusion to hypothesis test:
+#### Conclusion to hypothesis test:
 
-## Problem Two:
+### Problem Two:
 
 Determine if there is a difference in money received from pro lobby groups and con lobby groups (test and interval). You'll need to clean the data by replacing missing values with 0 and filtering to a single political party of your choice.
 
@@ -27,5 +27,5 @@ Determine if there is a difference in money received from pro lobby groups and c
 #INSERT YOUR CODE HERE
 ```
 
-### Conclusion to hypothesis test:
+#### Conclusion to hypothesis test:
 

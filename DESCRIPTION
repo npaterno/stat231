@@ -1,6 +1,6 @@
 Package: Stat231
 Title: Course Materials for Stat 231
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:
     person("Nick", "Paterno", email = "nicholas.paterno@gmail.com", role = c("aut","cre")) 
 Description: Course materials for stat 231 at PLU including lessons, assignments and required packages.
@@ -8,7 +8,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Depends: 
     R (>= 3.2)
 Imports:
